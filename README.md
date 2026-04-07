@@ -101,21 +101,21 @@ pip install opencv-python face_recognition numpy pyserial
 ---
 
 ## 🛠 Embedded Systems Considerations
--Communication Protocol:
-Lightweight 1-byte signaling (0xFF/0x00) for efficient embedded communication
--Temporal Debounce:
-Filters noise from natural blinking using time-based logic
--Latency Awareness:
-Designed for real-time responsiveness in safety-critical scenarios
--Edge-Triggered Signaling:
-Prevents redundant serial transmission
+### Communication Protocol:
+ - Lightweight 1-byte signaling (0xFF/0x00) for efficient embedded communication
+### Temporal Debounce:
+ - Filters noise from natural blinking using time-based logic
+### Latency Awareness:
+ - Designed for real-time responsiveness in safety-critical scenarios
+### Edge-Triggered Signaling:
+ - Prevents redundant serial transmission
 
 ---
 
 ## 🚀 Future Improvements
-Replace face_recognition with MediaPipe (faster)
-Add multi-threading
-Implement PERCLOS-based detection
-Integrate YOLO for phone/distraction detection
-Deploy on Raspberry Pi / Embedded Linux
+- Replace face_recognition with MediaPipe (faster)
+- Add multi-threading
+- Implement PERCLOS-based detection
+- Integrate YOLO for phone/distraction detection
+- Deploy on Raspberry Pi / Embedded Linux
   
