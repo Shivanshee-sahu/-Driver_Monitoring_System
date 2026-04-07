@@ -17,17 +17,40 @@ A real-time driver monitoring system that detects drowsiness using computer visi
 ---
 
 ## 🧠 System Architecture
-+----------------------+       +-----------------------+       +-----------------------+
-    |   Webcam (Input)     | ----> |   Vision Processing   | ----> |  Feature Extraction   |
-    |   720p @ 30 FPS      |       | (HOG + Linear SVM)    |       |  (EAR / MAR Compute)  |
-    +----------------------+       +-----------------------+       +-----------------------+
-                                                                             |
-                                                                             v
-    +----------------------+       +-----------------------+       +-----------------------+
-    |  Embedded Controller | <---- |   Serial Interface    | <---- |    Decision Engine    |
-    | (Virtual / C++ HW)   |       |  (RS232 / 9600 Baud)  |       |  (Temporal Filtering) |
-    +----------------------+       +-----------------------+       +-----------------------+
-
+    +----------------------+
+    |   Webcam (Input)     |
+    +----------+-----------+
+               |
+               v
+    +----------------------+
+    |  Vision Processing   |
+    | (OpenCV + Face Rec)  |
+    +----------+-----------+
+               |
+               v
+    +----------------------+
+    | Feature Extraction   |
+    |  EAR / MAR Compute   |
+    +----------+-----------+
+               |
+               v
+    +----------------------+
+    | Decision Engine      |
+    | Temporal Filtering   |
+    | (Counter + Score)    |
+    +----------+-----------+
+               |
+               v
+    +----------------------+
+    | Serial Interface     |
+    | (PySerial - UART)    |
+    +----------+-----------+
+               |
+               v
+    +----------------------+
+    | Embedded Controller  |
+    | (Virtual / Simulated)|
+    +----------------------+
 
 ---
 
